@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="./content/styles.css">
-    <title>Angular.js</title>
+    <link rel="stylesheet" href="./content/css/styles.css">
+    <!-- Angular.js Core Library -->
+    <script src="node_modules/angular/angular.min.js"></script>
+    <!-- Angular.js Routing Module -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.3/angular-route.min.js"></script>
+    
+    <!-- Our Application Files -->
+    <script src="app/app.js"></script>
+    <script src="app/services/todoService.js"></script>
+    <script src="app/controllers/mainController.js"></script>
+    <script src="app/controllers/aboutController.js"></script>
+    <title>Angular.js Application with Routing</title>
 </head>
 <body>
-    
+    <!-- Navigation Menu (Always visible) -->
+    <div id="menu-bar">
+        <h1>🅰️ Angular.js App</h1>
+        <ul>
+            <li><a href="#/">🏠 Home</a></li>
+            <li><a href="#/about">ℹ️ About</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- This is the MAGIC DOOR! 🚪 -->
+        <!-- Whatever page you navigate to will appear here -->
+        <div ng-view></div>
+    </main>
 </body>
 </html>
