@@ -1,0 +1,20 @@
+{
+  "name": "angular-js-app",
+  "version": "1.0.0",
+  "description": "A simple Angular.js application",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 3000",
+    "start:alt": "python3 -m http.server 8080",
+    "start:node": "npx http-server -p 3000 -o",
+    "kill-port": "lsof -ti:8000 | xargs kill -9 2>/dev/null || echo 'Port 8000 is free'",
+    "check-ports": "echo 'Checking common ports...' && (lsof -i:3000 && echo 'Port 3000 in use') || echo 'Port 3000 available' && (lsof -i:8000 && echo 'Port 8000 in use') || echo 'Port 8000 available' && (lsof -i:8080 && echo 'Port 8080 in use') || echo 'Port 8080 available'",
+    "install-server": "npm install -g http-server"
+  },
+  "dependencies": {
+    "angular": "^1.8.3"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
