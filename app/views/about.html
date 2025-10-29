@@ -1,0 +1,26 @@
+<!-- This will be shown when user visits #/about -->
+<div class="content">
+    <h2>About {{ appName }}</h2>
+    <p>{{ description }}</p>
+    
+    <!-- Show shared data from service (same data as home page!) -->
+    <div style="background: #e6f3ff; padding: 10px; margin: 10px 0; border-radius: 5px;">
+        <h4>📊 Your Statistics (Same Data as Home Page!):</h4>
+        <p>✅ Todos Created: {{ userStats.todosCreated }}</p>
+        <p>🗑️ Todos Completed: {{ userStats.todosCompleted }}</p>
+        <p>📄 Pages Visited: {{ userStats.pagesVisited }}</p>
+        <p>👤 App Author: {{ appInfo.author }}</p>
+        <p><em>🔄 This data is shared between all pages via DataService!</em></p>
+    </div>
+    
+    <h3>Features:</h3>
+    <ul>
+        <li ng-repeat="feature in features">{{ feature }}</li>
+    </ul>
+    
+    <h3>Contact Information:</h3>
+    <p>Email: {{ contact.email }}</p>
+    <p>Phone: {{ contact.phone }}</p>
+    
+    <button ng-click="goHome()">🏠 Go Back Home</button>
+</div>

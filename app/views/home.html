@@ -1,0 +1,31 @@
+<!-- This will be shown when user visits #/ (home) -->
+<div class="content">
+    <h2>Welcome to {{ appTitle }}!</h2>
+    <p>{{ message }}</p>
+    
+    <!-- Show shared data from service -->
+    <div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px;">
+        <h4>📊 Your Statistics (Shared Data):</h4>
+        <p>✅ Todos Created: {{ userStats.todosCreated }}</p>
+        <p>🗑️ Todos Completed: {{ userStats.todosCompleted }}</p>
+        <p>📄 Pages Visited: {{ userStats.pagesVisited }}</p>
+        <p>📱 App Version: {{ appInfo.version }}</p>
+    </div>
+    
+    <div>
+        <h3>Todo List Example</h3>
+        <input type="text" ng-model="newTodo" placeholder="Enter a new todo">
+        <button ng-click="addTodo()">Add Todo</button>
+        
+        <ul>
+            <li ng-repeat="todo in todos">
+                <h3>{{ todo.text }}</h3>
+                <span class="remove" ng-click="removeTodo($index)">×</span>
+            </li>
+        </ul>
+        
+        <p>Total todos: {{ todos.length }}</p>
+    </div>
+    
+    <button ng-click="goToAbout()">ℹ️ Learn More About This App</button>
+</div>
